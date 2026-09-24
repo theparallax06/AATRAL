@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #062B3A;
+    --primary-light: #37338A;
+    --accent: #35C6B0;
+    --accent-hover: #2EAD9A;
+    --secondary: #5A61AA;
+    --bg-main: #F7F7F2;
+    --bg-card: #FAF9F6;
+    --text-main: #1C161A;
+    --text-muted: #5E5B6E;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Prevent ANY element from exceeding viewport width */
+  img, video, svg, canvas, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ─── Global Mobile Containment ─────────────────────────────────── */
+
+/* Prevent content from exceeding viewport horizontally */
+main, section, article, aside {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure all card/panel containers never exceed screen width */
+.rounded-2xl, .rounded-3xl {
+  max-width: 100%;
+}
+
+/* Safe flex children — prevent text overflow inside flex rows */
+.min-w-0-child > * {
+  min-width: 0;
+}
+
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(245, 244, 252, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(90, 97, 170, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(108, 79, 232, 0.45);
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+@keyframes radar-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.radar-sweep {
+  animation: radar-sweep 4s linear infinite;
+  transform-origin: center center;
+}
+
+/* Hide scrollbar but allow scrolling */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile-safe overflow helpers */
+.mobile-safe {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Prevent very long words/URLs from breaking layout */
+.break-anywhere {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Touch-friendly minimum tap target */
+.tap-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
