@@ -1,0 +1,17 @@
+column,meaning,role
+date,Observation date,Feature
+district,Simulated Tamil Nadu deployment district,Feature
+service_type,Service requested,Feature
+day_of_week,0=Monday through 6=Sunday,Feature
+is_weekend,1 for Saturday/Sunday,Feature
+month,Calendar month,Feature
+quarter,Calendar quarter,Feature
+festival_period,Synthetic festival-period indicator,Feature
+available_workers,Simulated workers available that day,Operational feature
+lag_1d_demand,Previous-day demand for same district/service,Forecast feature
+lag_7d_demand,Demand 7 days earlier,Forecast feature
+lag_14d_demand,Demand 14 days earlier,Forecast feature
+rolling_7d_demand,Previous 7-day mean demand,Forecast feature
+rolling_30d_demand,Previous 30-day mean demand,Forecast feature
+service_demand_index,Synthetic service/month intensity index,Optional feature
+demand,Number of service requests,TARGET

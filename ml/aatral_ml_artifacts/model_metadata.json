@@ -1,0 +1,67 @@
+{
+  "model_type": "XGBRegressor",
+  "target": "demand",
+  "feature_cols": [
+    "district",
+    "service_type",
+    "day_of_week",
+    "is_weekend",
+    "month",
+    "quarter",
+    "festival_period",
+    "day_of_year",
+    "year",
+    "days_since_start",
+    "available_workers",
+    "lag_1d_demand",
+    "lag_7d_demand",
+    "lag_14d_demand",
+    "rolling_7d_demand",
+    "rolling_30d_demand",
+    "service_demand_index"
+  ],
+  "categorical_cols": [
+    "district",
+    "service_type"
+  ],
+  "category_mappings": {
+    "district": [
+      "Chengalpattu",
+      "Chennai",
+      "Coimbatore",
+      "Erode",
+      "Madurai",
+      "Salem",
+      "Thanjavur",
+      "Tiruchirappalli",
+      "Tiruppur",
+      "Vellore"
+    ],
+    "service_type": [
+      "Appliance Repair",
+      "Carpentry",
+      "Cleaning",
+      "Electrical",
+      "Gardening",
+      "Masonry",
+      "Painting",
+      "Plumbing"
+    ]
+  },
+  "train_date_range": [
+    "2024-01-31",
+    "2025-09-16"
+  ],
+  "test_date_range": [
+    "2025-09-17",
+    "2025-12-31"
+  ],
+  "test_metrics": {
+    "MAE": 2.49969220161438,
+    "RMSE": 3.1923766884405165,
+    "MAPE": 34.90575644826692,
+    "SMAPE": 28.25441185887082
+  },
+  "trained_on": "synthetic AATRAL service-demand dataset (not real transaction data)",
+  "saved_at": "2026-09-21T06:37:50.518786Z"
+}

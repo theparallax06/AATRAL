@@ -1,0 +1,10 @@
+{
+  "name": "COOPGIG - Cooperative Service & Workforce Platform",
+  "description": "Cooperative-owned digital service marketplace and workforce management platform connecting customers, verified cooperative workers, labour cooperative federations, and institutional clients.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
