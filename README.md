@@ -1,96 +1,507 @@
 # AATRAL
 
-Cooperative-owned digital workforce ecosystem connecting verified local workers with households and institutions.
+### Cooperative-Owned. Fair. Verified. AI-Enabled.
 
-## Problem Statement
-Skilled workers in the unorganized sector face underutilization, wage exploitation, and a lack of social security. Concurrently, households and institutions struggle to find reliable, safely vetted local service professionals, creating a persistent skill-demand mismatch.
+**Cooperative Gig Services Platform for Household & Community Services**
 
-## AATRAL Solution
-AATRAL bridges this gap as a transparent, cooperative-owned digital marketplace. By leveraging AI-driven matching, demand forecasting, and an adaptive worker allocation mechanism, AATRAL ensures equitable wages, worker welfare, and reliable service delivery.
+AATRAL is a cooperative-owned digital service platform that connects verified local workers with households and institutions. It brings worker verification, location-based matching, demand forecasting, fair allocation, transparent pricing, worker welfare, and simple service discovery into one place.
 
-## Key Features
-- **Customer Module**: Service discovery, transparent pricing, emergency bookings, and SOS safety tools.
-- **Worker Module**: Job management, availability tracking, skill ledger, ratings/reputation, and welfare benefits integration.
-- **Apprentice Module**: Mentor-apprentice pairing under experienced workers, logged work records, and skill progression tracking.
-- **Institution Module**: Bulk service orders, attendance management, and coordinated workforce tracking.
-- **Admin Module**: Centralized worker verification, roster management, utilization tracking, and dispute resolution.
-- **Voice Assistant**: Multilingual voice-based service access converting user speech into structured requests, designed especially for elderly and low-literacy users.
-- **Vision-Based Service Detection**: Analyzes uploaded photos (e.g., a wall crack) to identify the required service category and suitable worker skill for intelligent service discovery.
-- **AAWA (AATRAL Adaptive Worker Allocation)**: A constraint-aware mechanism ensuring skill-aware, context-aware, and explainable worker assignment.
-- **AI Demand Forecasting**: Predicts workforce needs to optimize resource allocation using historical data.
-- **Worker Welfare & Progression**: Integrates benefits, skill validation, and structured career progression.
-- **Ombudsman / Grievance Management**: Streamlined complaint handling, evidence collection, and transparent resolution.
+---
 
-## End-to-End Workflow
-1. **Service Request**: Customer initiates a request via Voice, Vision (photo), or text.
-2. **Worker Verification**: Centralized background and credential validation ensures safety.
-3. **AI Smart Matching / AAWA**: Eligible workers are filtered and scored based on multi-factor constraints.
-4. **Worker Assignment**: Fair allocation of the optimal worker based on workload and proximity.
-5. **Service Execution**: The service is performed, tracked, and monitored.
-6. **Payment**: Secure, transparent payment processing.
-7. **Feedback**: Ratings inform future AAWA scoring and worker career progression.
+## 2. Problem Statement
 
-## Technical Architecture
-A modular client-server architecture integrating a React-based frontend, a Node.js/Express application, spatial data mapping, and standalone machine learning pipelines for predictive intelligence.
+Labour Cooperative Federations and Labour Cooperative Societies have a large pool of skilled workers including electricians, plumbers, carpenters, painters, domestic helpers, caregivers, drivers, gardeners, cleaners and technicians.
 
-## AI & Algorithms
-- **XGBoost Demand Forecasting**: Python-based forecasting model to predict service volume and optimize workforce planning.
-- **AAWA Adaptive Allocation**: A multi-factor weighted scoring approach prioritizing skill relevance, geographic distance, availability, reliability/safety, and current workload.
-- **Vision-Based Service Detection**: Multimodal AI processing of user-uploaded images to infer service context.
-- **Voice/Intent Processing**: Speech-to-intent natural language processing to generate structured service requests from voice input.
+However, these workers often remain underutilized because cooperatives lack a structured digital platform to connect them with households and institutions requiring services.
 
-## Fairness, Safety & Explainability
-AAWA ensures workload is distributed fairly among active workers. Explicit exclusion of suspended workers ensures safety. The multi-factor scoring makes matching completely transparent and explainable to both customers and workers.
+AATRAL addresses this gap by creating a **cooperative-owned digital service marketplace** focused on:
 
-## Cooperative Model
-Operates on a cooperative framework where workers share ownership and governance, minimizing intermediary commissions while maximizing worker welfare and equitable pay.
+* Verified service providers
+* Fair wages
+* Worker welfare
+* Consumer trust
+* Skill-demand matching
+* Digital service delivery
+* AI-based demand forecasting and workforce allocation
 
-## Tech Stack
-- **Frontend**: React, Tailwind CSS, Vite, Motion
-- **AI & Intelligence**: Python, XGBoost, Google Gemini API
-- **Location & Maps**: Leaflet, React-Leaflet
-- **Backend & API**: Node.js, Express
+---
 
-## Security
-Role-based access control, secure API key management, explicit data exclusion for suspended workers, and verified-only participant interactions.
+## 3. Proposed Solution
 
-## Project Structure
-- `src/components/`: Role-based UI modules (Customer, Worker, Admin, Institution).
-- `src/context/`: Application state management.
-- `src/utils/`: Core logic including the AAWA matching engine.
-- `src/data/`: Static mock data and configuration.
-- `ml/`: XGBoost demand forecasting and AI models.
+AATRAL brings the main parts of a cooperative workforce system together in one platform:
 
-## Setup & Installation
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-2. Environment Setup:
-   ```bash
-   cp .env.example .env.local
-   # Update .env.local with necessary API keys
-   ```
+```text
+Customer / Institution
+        ↓
+Text / Voice / Vision Service Request
+        ↓
+Service & Skill Identification
+        ↓
+Verified Worker Pool
+        ↓
+AI Smart Matching
+        ↓
+AAWA Adaptive Worker Allocation
+        ↓
+Worker Assignment
+        ↓
+Service Execution
+        ↓
+Digital Payment & Invoice
+        ↓
+Rating / Feedback
+        ↓
+Worker Progression & Future Allocation
+```
 
-## Running the Application
-Start the development server:
+The platform combines customer access, worker management, cooperative administration, institutional demand, apprentice progression, welfare and grievance resolution in one ecosystem.
+
+---
+
+## 4. Key Innovation
+
+* **Cooperative-Owned:** Enables cooperatives to manage and strengthen their local workforce.
+* **Demand-Aware:** Forecasts service demand for proactive workforce deployment.
+* **Fair & Explainable:** Uses transparent multi-factor worker allocation.
+* **Worker Progression:** Connects verified work with training and career development.
+* **Vision-Based Detection:** Converts issue photographs into service/skill identification.
+* **AAWA:** Adaptive worker allocation using skill, distance, availability, reliability and workload.
+* **Accessibility-First:** Voice-based service access supports elderly and low-literacy users.
+* **Worker-Centric:** Integrates welfare, benefits, apprenticeships and grievance support.
+
+---
+
+## 5. Core Modules
+
+### 5.1 Customer Module
+
+* Service discovery and booking
+* Transparent wages and pricing
+* Worker rankings, credentials and service history
+* Emergency booking
+* SOS and customer safety
+* Voice-based service requests
+* Vision-based service detection
+
+### 5.2 Worker Module
+
+* Booking and job management
+* Availability tracking
+* Skill and credential profiles
+* Ratings and reputation
+* Training ledger
+* Welfare benefits
+* Performance-based progression
+
+### 5.3 Apprentice Module
+
+* Apprentice–worker pairing
+* Work-based learning
+* Worker-maintained work logs
+* Skill progression tracking
+* Ranking improvement through verified work experience
+
+### 5.4 Institution Module
+
+* Bulk service orders
+* Workforce scheduling
+* Attendance management
+* Coordinated worker deployment
+* Institutional service records
+
+### 5.5 Admin Module
+
+The Admin module acts as the central junction of the AATRAL ecosystem.
+
+* Worker verification
+* Roster management
+* Worker utilization monitoring
+* Demand allocation
+* Workforce planning
+* Welfare grant management
+* Ombudsman and grievance coordination
+* Platform-wide monitoring
+
+---
+
+## 6. Voice Assistant
+
+AATRAL provides voice-based service access for users who may face difficulty with text input.
+
+```text
+Voice Input
+    ↓
+Speech / Intent Processing
+    ↓
+Structured Service Request
+    ↓
+Service Matching
+    ↓
+Worker Allocation
+```
+
+This improves accessibility for elderly, low-literacy and differently enabled users.
+
+---
+
+## 7. Vision-Based Service Detection
+
+AATRAL allows users to capture an image of a service issue and use it to identify the required service category.
+
+**Example:**
+
+```text
+Wall Crack Photo
+      ↓
+Vision Analysis
+      ↓
+Required Service / Skill
+      ↓
+Eligible Worker Pool
+      ↓
+AAWA Allocation
+```
+
+This reduces dependence on technical service terminology and simplifies service discovery.
+
+---
+
+## 8. AAWA — AATRAL Adaptive Worker Allocation
+
+AAWA is AATRAL's custom, context-aware worker allocation mechanism.
+
+It does not depend on a simple first-come-first-served model. Instead, eligible workers are evaluated using multiple factors:
+
+| **Factor** | **Purpose** |
+|---|---|
+| Skill Relevance | Matches required skill with worker capability |
+| Distance | Reduces travel burden and response time |
+| Availability | Allocates only available workers |
+| Reliability | Considers verified performance and ratings |
+| Workload | Prevents excessive concentration of jobs |
+
+### AAWA Workflow
+
+```text
+Eligible Worker Filtering
+        ↓
+Multi-Factor Weighted Scoring
+        ↓
+Fair Allocation Decision
+        ↓
+Worker Assignment
+        ↓
+Workload Update
+        ↓
+Feedback
+        ↓
+Future Allocation Improvement
+```
+
+The approach makes allocation **skill-aware, workload-aware and explainable**.
+
+---
+
+## 9. AI Demand Forecasting
+
+AATRAL uses a Python-based **XGBoost demand forecasting prototype** to estimate future service requirements.
+
+```text
+Historical Service Data
+        ↓
+Data Preparation
+        ↓
+XGBoost Model
+        ↓
+Demand Forecast
+        ↓
+Service × Location × Time Analysis
+        ↓
+Workforce Planning
+```
+
+The forecast supports proactive worker deployment and reduces demand–supply imbalance.
+
+> **Prototype Note:** The current forecasting demonstration uses synthetic/project data.
+
+---
+
+## 10. Worker Welfare & Progression
+
+AATRAL extends beyond service booking by supporting worker development and welfare.
+
+* Welfare benefit tracking
+* Training and certification records
+* Apprentice development
+* Skill progression
+* Performance-based incentives
+* Worker safety mechanisms
+* Structured career growth
+
+Workers who maintain strong performance and ratings can be connected to additional benefits and progression pathways.
+
+---
+
+## 11. Ombudsman & Grievance Management
+
+The Ombudsman layer provides a structured mechanism for handling disputes and protecting trust across the cooperative ecosystem.
+
+```text
+Complaint / Grievance
+        ↓
+Evidence Collection
+        ↓
+Case Registration
+        ↓
+Admin / Ombudsman Review
+        ↓
+Resolution
+        ↓
+Case Closure & Record
+```
+
+This creates an accountable pathway for customer and worker grievances.
+
+---
+
+## 12. Institution Workforce Management
+
+Institutions can use AATRAL to coordinate larger service requirements.
+
+Key capabilities include:
+
+* Bulk service requests
+* Worker scheduling
+* Attendance tracking
+* Workforce visibility
+* Service completion monitoring
+* Centralized institutional records
+
+This converts fragmented institutional service requirements into structured workforce demand.
+
+---
+
+## 13. Technical Architecture
+
+```text
+                AATRAL PLATFORM
+                       │
+        ┌──────────────┼──────────────┐
+        ↓              ↓              ↓
+   Customer        Worker        Institution
+        │              │              │
+        └──────────────┼──────────────┘
+                       ↓
+                Admin / Cooperative
+                       ↓
+        ┌──────────────┼──────────────┐
+        ↓              ↓              ↓
+   AI Forecasting     AAWA       Vision / Voice
+        │              │              │
+        └──────────────┼──────────────┘
+                       ↓
+              Workforce Allocation
+                       ↓
+              Service Execution
+                       ↓
+          Payment + Feedback + Welfare
+```
+
+---
+
+## 14. Technology Stack
+
+| **Technology** | **Purpose** |
+|---|---|
+| React | Web application interface |
+| Vite | Development and build system |
+| Tailwind CSS | Responsive UI styling |
+| Node.js / Express | Backend and API layer |
+| Python | ML processing |
+| XGBoost | Demand forecasting |
+| Google Gemini API | AI-assisted intelligence |
+| Leaflet / React-Leaflet | Geo-location and maps |
+| JavaScript / TypeScript | Application logic |
+| Netlify | Live prototype deployment |
+
+---
+
+## 15. Security & Trust
+
+AATRAL incorporates security and trust mechanisms across the platform.
+
+* Role-based access control
+* Worker verification
+* Credential validation
+* Protected API configuration
+* Verified participant interactions
+* Suspended-worker exclusion
+* Customer SOS support
+* Transparent allocation logic
+* Structured grievance handling
+
+---
+
+## 16. Application Workflow
+
+1. Customer or institution creates a service request.
+2. Request can be submitted through text, voice or vision-assisted input.
+3. Required service category and worker skill are identified.
+4. Eligible verified workers are filtered.
+5. AAWA evaluates skill, distance, availability, reliability and workload.
+6. The most suitable worker is allocated.
+7. Worker accepts and performs the service.
+8. Payment and invoice records are generated.
+9. Customer provides rating and feedback.
+10. Feedback contributes to worker progression and future allocation.
+11. Demand forecasting supports future workforce planning.
+
+---
+
+## 17. Expected Impact
+
+### Worker Impact
+
+* Better utilization of skilled workers
+* Reduced idle time
+* Fairer job allocation
+* Improved welfare access
+* Structured skill progression
+
+### Customer Impact
+
+* Verified local services
+* Transparent pricing
+* Faster matching
+* Safer service delivery
+* Accessible service discovery
+
+### Cooperative Impact
+
+* Digital workforce visibility
+* Demand-based planning
+* Stronger worker participation
+* Centralized administration
+* Reduced dependence on private intermediaries
+
+### Economic Impact
+
+* Local employment growth
+* Better workforce productivity
+* More organized service delivery
+* Scalable cooperative model
+
+---
+
+## 18. Market Context
+
+India's digital home-services and gig-work ecosystem provides a large opportunity for a cooperative-led platform.
+
+* **120 lakh gig workers** in FY2024–25.
+* **₹8,500–8,800 Cr** projected online home-services market by FY2030.
+* **18–22% CAGR** projected for online home services through FY2030.
+
+**Sources:** Government of India, *Economic Survey 2025–26*; India Brand Equity Foundation (IBEF), 2025.
+
+---
+
+## 19. Project Status
+
+AATRAL is currently a functional software prototype that demonstrates the main parts of the cooperative service ecosystem.
+
+The current version includes:
+
+* Customer, Worker, Apprentice, Institution and Admin modules
+* Worker verification and skill profiling
+* Service booking and matching
+* AAWA allocation logic
+* Voice and vision-assisted service discovery
+* AI demand forecasting workflow
+* Welfare and progression concepts
+* Ombudsman / grievance workflow
+* Geo-location based service matching
+* Live web deployment
+
+The AI forecasting component currently uses synthetic/project data for demonstration.
+
+---
+
+## 19. Setup & Installation
+
+### 19.1 Clone the Repository
+
+```bash
+git clone https://github.com/theparallax06/AATRAL
+cd Aatral
+```
+
+### 19.2 Install Dependencies
+
+```bash
+npm install
+```
+
+### 19.3 Configure Environment
+
+Create a local environment file from the example configuration:
+
+```bash
+cp .env.example .env.local
+```
+
+Add the required API configuration.
+
+### 19.4 Run Locally
+
 ```bash
 npm run dev
 ```
 
-## Prototype / Deployment
-- **Live**: https://the-parallax06-aatral.netlify.app/
-- **GitHub**: https://github.com/BanuSha05/Aatral
+---
 
-## Current Project Status
-The prototype demonstrates the core platform, AAWA logic, and AI integrations (Voice/Vision) using mock data. The XGBoost forecasting model operates on synthetic AATRAL data.
+## 20. Deployment & Project Links
 
-## Future Scope
-- Integration with real-world payment gateways (UPI/Razorpay).
-- Large-scale production database migration to PostgreSQL.
-- Dedicated mobile application using Flutter.
+### 20.1 Live Deployment
 
-## Team / Project Information
-- **Event**: Smart India Hackathon 2026
-- **Problem Statement**: SIH26089
-- **Team**: The Parallax
+**AATRAL Live Prototype:**  
+https://the-parallax-aatral.netlify.app/
+
+### 20.2 GitHub Repository
+
+**Source Code:**  
+https://github.com/theparallax06/AATRAL
+
+### 20.3 Project Demo Video
+
+**YouTube:**  
+https://youtu.be/k3zG6Iy5-1A
+
+---
+
+## 23. Future Scope
+
+* Production-grade PostgreSQL deployment
+* Full UPI / Razorpay integration
+* Dedicated Flutter mobile application
+* Government and cooperative-system integrations
+* Expanded multilingual voice support
+* Real-world demand datasets
+* Continuous ML model retraining
+* Expanded welfare and insurance integrations
+* Regional cooperative federation deployment
+* Advanced analytics and workforce optimization
+
+---
+
+## 22. Team
+
+**THE PARALLAX**
+
+**Project:** AATRAL  
+**Team:** THE PARALLAX
+
+---
+
+## 23. License
+
+AATRAL is developed as a software project by **Team THE PARALLAX**.
