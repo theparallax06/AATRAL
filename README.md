@@ -480,6 +480,7 @@ https://youtu.be/k3zG6Iy5-1A
 
 **APK Download:**  
 https://github.com/theparallax06/AATRAL/releases/tag/v1.0.0
+
 ---
 
 ## 23. Future Scope
