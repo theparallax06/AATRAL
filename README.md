@@ -476,6 +476,10 @@ https://github.com/theparallax06/AATRAL
 **YouTube:**  
 https://youtu.be/k3zG6Iy5-1A
 
+### 20.4 Android APK
+
+**APK Download:**  
+https://github.com/theparallax06/AATRAL/releases/tag/v1.0.0
 ---
 
 ## 23. Future Scope
